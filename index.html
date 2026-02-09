@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#0b0c10" id="themeColorMeta">
+  <title>Workout</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="topRow">
+      <div class="brand">Workout</div>
+      <button id="themeBtn" class="iconBtn" aria-label="Toggle theme" title="Theme">🌙</button>
+    </div>
+
+    <div class="controls">
+      <div class="controlGroup">
+        <label class="label" for="workoutSelect">Тренировка</label>
+        <select id="workoutSelect"></select>
+      </div>
+
+      <div class="btnRow">
+        <button id="startBtn" class="btn primary">Start</button>
+        <button id="resumeBtn" class="btn" hidden>Resume</button>
+        <button id="resetBtn" class="btn danger" hidden>Reset</button>
+        <button id="shareBtn" class="btn" hidden>Copy Link</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section id="status" class="toast" hidden></section>
+
+    <section id="exerciseCard" class="card" hidden>
+      <div class="headerBlock">
+        <div class="left">
+          <div id="workoutTitle" class="workoutTitle"></div>
+          <div id="dateText" class="dateText"></div>
+          <div id="exTitle" class="exTitle"></div>
+          <div id="exMeta" class="meta"></div>
+        </div>
+        <div class="right">
+          <div id="exCounter" class="pill"></div>
+        </div>
+      </div>
+
+      <div class="tableWrap">
+        <table class="setTable" aria-label="Sets log">
+          <thead>
+            <tr>
+              <th class="colSet">Set</th>
+              <th class="colWeight">Weight</th>
+              <th class="colReps">Reps</th>
+              <th class="colRir">RIR</th>
+              <th class="colDone">Done</th>
+            </tr>
+          </thead>
+          <tbody id="setTbody"></tbody>
+        </table>
+      </div>
+
+      <div id="timerBox" class="timer" hidden>
+        <div class="timerLine">
+          <div class="timerLabel">Rest</div>
+          <div id="timerText" class="timerText">00:00</div>
+        </div>
+        <div class="timerBtns">
+          <button id="skipRestBtn" class="btn">Skip</button>
+          <button id="stopTimerBtn" class="btn danger">Stop</button>
+        </div>
+      </div>
+
+      <div class="navRow">
+        <button id="prevBtn" class="btn">← Prev</button>
+        <button id="nextBtn" class="btn">Next →</button>
+      </div>
+    </section>
+
+    <section id="doneCard" class="card" hidden>
+      <div class="doneTitle">Workout Summary ✅</div>
+      <div id="doneMeta" class="meta"></div>
+
+      <div id="summaryTotals" class="summaryTotals"></div>
+      <div id="summaryWrap" class="summaryWrap"></div>
+
+      <div class="navRow">
+        <button id="doneResetBtn" class="btn primary">Start Again</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="workouts.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
